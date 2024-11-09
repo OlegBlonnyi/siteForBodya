@@ -1,0 +1,22 @@
+name: Process Form Data
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'data.json'  # шлях до файлу, в який зберігаються дані
+
+jobs:
+  process-data:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Process Data
+      run: |
+        echo "Processing new form data..."
+        cat data.json
+        # Додай будь-які додаткові кроки для обробки даних, наприклад, надсилання на email чи інше
