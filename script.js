@@ -1,3 +1,30 @@
+// ---------- логіка таймера
+function updateTimer() {
+  const now = new Date();
+  const endOfDay = new Date();
+  endOfDay.setHours(23, 59, 59, 999);
+
+  const diff = endOfDay - now;
+
+  const seconds = Math.floor((diff / 1000) % 60);
+  const minutes = Math.floor((diff / 1000 / 60) % 60);
+  const hours = Math.floor((diff / 1000 / 60 / 60) % 24);
+  const days = Math.floor(diff / 1000 / 60 / 60 / 24);
+
+  document.getElementById("days").textContent = days;
+  document.getElementById("hours").textContent = hours;
+  document.getElementById("minutes").textContent = minutes;
+  document.getElementById("seconds").textContent = seconds;
+}
+
+// Оновлюємо таймер кожну секунду
+setInterval(updateTimer, 1000);
+
+// Ініціалізуємо таймер при завантаженні сторінки
+updateTimer();
+
+// ---------- логіка таймера
+
 // логіка форми
 
 // service_uerq9aj // --- Серві ID
