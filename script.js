@@ -17,10 +17,8 @@ function updateTimer() {
   document.getElementById("seconds").textContent = seconds;
 }
 
-// Оновлюємо таймер кожну секунду
 setInterval(updateTimer, 1000);
 
-// Ініціалізуємо таймер при завантаженні сторінки
 updateTimer();
 
 // ---------- логіка таймера
@@ -33,8 +31,8 @@ updateTimer();
 
 (function () {
   emailjs.init({
-    // publicKey: "eQS6CebShZKZGETRn", // BODI
-    publicKey: "_eP-bKXVm1q1Qduzr",
+    publicKey: "eQS6CebShZKZGETRn" // BODI
+    // publicKey: "_eP-bKXVm1q1Qduzr",
   });
 })();
 
@@ -107,8 +105,8 @@ buyerForm.addEventListener("submit", function (e) {
     nickTG: document.getElementById("nickTG").value || "Не вказано",
   };
 
-  // emailjs.send('service_uerq9aj', 'template_t99vnli', formData) // BODI
-  emailjs.send("service_jy4vky7", "template_xtf1sse", formData).then(
+  emailjs.send('service_uerq9aj', 'template_t99vnli', formData).then( // BODI
+  // emailjs.send("service_jy4vky7", "template_xtf1sse", formData).then(
     function (response) {
       console.log("Успіх:", response);
       alert("Дякуємо за реєстрацію! Лист відправлено.");
