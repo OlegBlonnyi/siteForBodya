@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'MyFont'; /* Назва шрифту */
+  src: url('./media/fonts/Lobster-Regular.ttf') format('truetype'); /* Формат ttf */
+  font-weight: normal; /* Наприклад, 400 */
+  font-style: normal;  /* Наприклад, normal або italic */
+}
+
+
 :root{
   --background-color: #16161a;
   /* --text-in-block-color: #001858; */
@@ -89,6 +97,40 @@ header nav ul li a{
 main{
   width: 100%;
 }
+main .price-box{
+  position: absolute;
+  bottom: -80px;
+  right: -10px;
+  width: 100px;
+  height: 100px;
+  border: 2px double rgb(189, 189, 0);
+  border-radius: 50%;
+  background-color: rgb(255, 255, 0);
+
+  transform: rotate(-10deg);
+
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 18px;
+}
+.price-box p{
+  margin: 5px 0;
+  text-align: center;
+}
+.price-box .old-price{
+  font-size: 14px;
+  text-decoration: line-through;
+  color: gray;
+}
+.price-box .new-price{
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--primary-color);
+}
 main .section-block {
   padding: 20px;
   border-radius: 15px;
@@ -106,14 +148,18 @@ main .section-block {
   background-image: url(./media/images/first-bg-img.jpg);
 }
 .main-text{
+  position: relative;
   max-width: 800px;
   padding: 5px;
   background: transparent;
   backdrop-filter: blur(15px);
   border: 1px solid white;
   border-radius: 10px;
+  font-family: MyFont;
   font-size: 30px;
-  color: var(--text-in-block-color);
+  /* color: #007bff; */
+  color: rgb(13, 13, 188);
+  /* color: var(--text-in-block-color); */
   margin: 0px auto;
 }
 .second-image{
@@ -158,7 +204,10 @@ main .section-block {
   color: var(--text-in-block-color);
   /* margin: 0 auto; */
 }
-
+.fourth-block{
+  color: black;
+  background: linear-gradient(white, #9FA5D5);
+}
 
 .form-block{
   background: linear-gradient(#9FA5D5, #E8F5C8);
@@ -194,6 +243,7 @@ main .section-block {
 .circle {
   width: 100px;
   height: 100px;
+  /* border: 5px solid rgb(13, 13, 188); */
   border: 5px solid #007bff;
   border-radius: 50%;
   display: flex;
@@ -207,6 +257,7 @@ main .section-block {
 .circle span {
   font-size: 24px;
   font-weight: bold;
+  /* color: rgb(13, 13, 188); */
   color: #007bff;
 }
 
@@ -391,6 +442,7 @@ footer a{
   .circle{
     width: 70px;
     height: 70px;
+    /* border: 2px solid rgb(13, 13, 188); */
     border: 2px solid #007bff;
   }
   .circle span{
@@ -401,7 +453,7 @@ footer a{
   }
   .main-text{
     margin-top: 0;
-    font-size: 25px;
+    font-size: 22px;
   }
   .second-image{
     background-position: 50% 0 ;
