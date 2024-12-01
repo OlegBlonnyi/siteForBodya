@@ -134,7 +134,7 @@ main .price-box{
 main .section-block {
   opacity: 0; /* Початкова невидимість */
   transform: translateY(80px); /* Початкове зміщення */
-  transition: all 1s ease-out; /* Плавний перехід */
+  transition: transform 1s ease-out; /* Плавний перехід */
   /* ----------------- */
   padding: 20px;
   border-radius: 15px;
