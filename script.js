@@ -109,7 +109,13 @@ buyerForm.addEventListener("submit", function (e) {
   // emailjs.send("service_jy4vky7", "template_xtf1sse", formData).then(
     function (response) {
       console.log("Успіх:", response);
-      alert("Дякуємо за реєстрацію! Лист відправлено.");
+      const successMessage = document.getElementById("successMessage");
+      successMessage.style.transform = "translateX(0px)";
+
+      setTimeout(() => {
+        successMessage.style.transform = "translateX(-350px)"
+      }, 5000);
+      e.target.reset()
     },
     function (error) {
       console.log("Помилка:", error);
@@ -121,11 +127,8 @@ buyerForm.addEventListener("submit", function (e) {
 // логіка форми
 
 // анімація при скролі
-
-// Отримуємо всі блоки з класом 'box'
 const blocks = document.querySelectorAll('.section-block');
 
-// Функція перевірки видимості елемента у viewport
 function isInViewport(element) {
   const rect = element.getBoundingClientRect();
   return (
@@ -134,7 +137,6 @@ function isInViewport(element) {
   );
 }
 
-// Функція, яка перевіряє всі блоки
 function checkVisibility() {
   blocks.forEach(block => {
     if (isInViewport(block)) {
@@ -144,11 +146,6 @@ function checkVisibility() {
   });
 }
 
-// Слухаємо подію скролу
 window.addEventListener('scroll', checkVisibility);
-
-// Початковий виклик, щоб відобразити елементи вже у видимій зоні
 checkVisibility();
-
-
 // анімація при скролі
