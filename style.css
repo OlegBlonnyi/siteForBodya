@@ -132,11 +132,31 @@ main .price-box{
   color: var(--primary-color);
 }
 main .section-block {
+  opacity: 0; /* Початкова невидимість */
+  transform: translateY(80px); /* Початкове зміщення */
+  transition: all 1s ease-out; /* Плавний перехід */
+  /* ----------------- */
   padding: 20px;
   border-radius: 15px;
   background-color: var(--text-in-block-color);
   box-shadow: 0 4px 8px -6px lightgray;
 }
+
+/* ----------- */
+.section-block.visible {
+  opacity: 1; /* Робимо елемент видимим */
+  transform: translateY(0); /* Зміщення забирається */
+}
+
+.hidden {
+  visibility: hidden; /* Сховати до активації */
+}
+
+.visible {
+  visibility: visible; /* Відобразити, коли активується */
+}
+/* --------------- */
+
 .first-image{
   display: flex;
   flex-direction: column;

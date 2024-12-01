@@ -84,7 +84,7 @@ buyerForm.addEventListener("submit", function (e) {
     return true;
   };
   let validateEmail = (e) => {
-    let pattern = /^[a-zA-Z][a-zA-z._0-9]+@[a-z0-9]{3,20}\.[a-z]{2,4}$/
+    let pattern = /^[a-zA-Z._0-9][a-zA-z._0-9]+@[a-z0-9]{3,20}\.[a-z]{2,4}$/
     if (!pattern.test(buyerForm.email.value)) {
       if(buyerForm.email.value == "") {
         emailError.innerText = "Ви не ввели email"
@@ -119,3 +119,36 @@ buyerForm.addEventListener("submit", function (e) {
 });
 
 // логіка форми
+
+// анімація при скролі
+
+// Отримуємо всі блоки з класом 'box'
+const blocks = document.querySelectorAll('.section-block');
+
+// Функція перевірки видимості елемента у viewport
+function isInViewport(element) {
+  const rect = element.getBoundingClientRect();
+  return (
+    rect.top < window.innerHeight && // Верхній край у межах вікна
+    rect.bottom > 0                 // Нижній край у межах вікна
+  );
+}
+
+// Функція, яка перевіряє всі блоки
+function checkVisibility() {
+  blocks.forEach(block => {
+    if (isInViewport(block)) {
+      block.classList.add('visible');
+      block.classList.remove('hidden');
+    }
+  });
+}
+
+// Слухаємо подію скролу
+window.addEventListener('scroll', checkVisibility);
+
+// Початковий виклик, щоб відобразити елементи вже у видимій зоні
+checkVisibility();
+
+
+// анімація при скролі
